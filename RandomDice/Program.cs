@@ -6,7 +6,21 @@ namespace RandomDice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string input;
+            input = Console.ReadLine();
+
+            int n;
+            Int32.TryParse(input, out n);
+
+            Random dice = new Random();
+
+            int sum = 0;
+            for(int i = 0; i < n; i++)
+            {
+                sum += dice.Next(1, 7);
+            }
+
+            Console.WriteLine(sum);
         }
     }
 }
